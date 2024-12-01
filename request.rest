@@ -1,0 +1,77 @@
+### Add a Post
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+  "title": "My First Post",
+  "content": "This is the content of my first post.",
+  "sender": "123"
+}
+
+### Add a Post
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+"title": "My second post",
+"content": "I love to program.",
+"sender": "555"
+}
+
+### Add a Post
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+  "title": "hello",
+  "content": "I love pizza",
+  "sender": "1234"
+}
+
+### Get All Posts
+GET http://localhost:3000/posts
+
+### Get a Post by ID
+GET http://localhost:3000/posts/67446f5fc021e06658eba6eb
+
+### Update a Post
+PUT http://localhost:3000/posts/67446f5fc021e06658eba6eb
+Content-Type: application/json
+
+{
+"title": "Updated Title222",
+"content": "Updated Content"
+}
+
+### Get all posts by sender ID
+GET http://localhost:3000/posts?sender=1234
+
+### Add a comment
+POST http://localhost:3000/comments
+Content-Type: application/json
+
+{
+  "post": "67446f5fc021e06658eba6eb",
+  "content": "comment2 test",
+  "sender": "Ronen"
+}
+
+### Get comment by ID
+GET http://localhost:3000/comments/674610ab9e759d2abe0461f2
+Content-Type: application/json
+
+### Update Comment
+PUT http://localhost:3000/comments/674610ab9e759d2abe0461f2
+Content-Type: application/json
+
+{
+  "post": "67446f5fc021e06658eba6eb",
+  "content": "This is an updated comment!!",
+  "sender": "Ronen"
+}
+
+### Delete Comment
+DELETE http://localhost:3000/comments/67484ed05831efdf5ecde423
+
+### Get all comments for a post
+GET http://localhost:3000/comments/post/67446f5fc021e06658eba6eb
