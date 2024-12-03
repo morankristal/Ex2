@@ -1,5 +1,3 @@
-//morankristal-212174882-RonenAnuka-315236448
-
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
@@ -24,6 +22,10 @@ mongoose.connect(process.env.MONGO_URI, {
 });
 
 const PORT = process.env.PORT;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+const initApp = () => {
+    return app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+    });
+};
+
+module.exports = initApp;

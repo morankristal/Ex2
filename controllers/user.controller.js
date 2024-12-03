@@ -18,7 +18,10 @@ const registerUser = async (req, res) => {
 
         const user = new User({ username, email, password });
         await user.save();
-        res.status(201).json({ message: 'User registered successfully' });
+        res.status(201).json({
+                message: "User registered successfully",
+                _id: user._id, // החזרת ה-ID של המשתמש שנוצר
+            });
 
     } catch (err)
     {
@@ -31,7 +34,7 @@ const loginUser = async (req, res) => {
     try {
         const user = await User.findOne({ email });
         if (!user)
-            return res.status(400).json({ message: 'User not found' });
+            return res.status(400).json({ message: 'Invalid credentials' });
 
         const isPasswordValid = await bcrypt.compare(password, user.password);
         if (!isPasswordValid)
