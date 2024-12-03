@@ -75,3 +75,66 @@ DELETE http://localhost:3000/comments/67484ed05831efdf5ecde423
 
 ### Get all comments for a post
 GET http://localhost:3000/comments/post/67446f5fc021e06658eba6eb
+
+### Register a new user
+POST http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+  "username": "moran",
+  "email": "moran@example.com",
+  "password": "password1234"
+}
+
+
+### Login a user
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+  "email": "moran@example.com",
+  "password": "password1234"
+}
+
+
+### Get user by ID
+GET http://localhost:3000/users/id/674f1865dc976adf26f7ceea
+Content-Type: application/json
+
+
+### Get user by username
+GET http://localhost:3000/users/username/testuser
+Content-Type: application/json
+
+
+### Update a user
+PUT http://localhost:3000/users/674f1835dc976adf26f7cee6
+Content-Type: application/json
+
+{
+  "username": "updateduser",
+  "email": "updated@example.com"
+}
+
+
+### Delete a user
+DELETE http://localhost:3000/users/674f1865dc976adf26f7ceea
+Content-Type: application/json
+
+
+### Logout a user
+POST http://localhost:3000/users/logout
+Content-Type: application/json
+
+{
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzRmMThjZGRjOTc2YWRmMjZmN2NlZjciLCJpYXQiOjE3MzMyMzY5NTAsImV4cCI6MTczMzg0MTc1MH0.MNkjEil_YRL_UiIKknnfhU-_xLT2N8qUW41P4i7NFho"
+}
+
+
+### Refresh Token
+POST http://localhost:3000/users/refresh-token
+Content-Type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzRmMThjZGRjOTc2YWRmMjZmN2NlZjciLCJpYXQiOjE3MzMyMzY5OTYsImV4cCI6MTczMzg0MTc5Nn0.ahVdBhJWPY5dM9gDNi8sack_mNaRCOS6lncXaSqFG60"
+}
